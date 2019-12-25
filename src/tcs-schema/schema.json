@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "tcsSchema",
+    "title": "",
+    "type": "object",
+    "description": "custom schema",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "name",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "你想生成个啥？"
+
+        },
+        "project": {
+            "type": "string",
+            "description": "Generation in spacific Angular Cli workspace project"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

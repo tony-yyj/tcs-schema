@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "page",
+    "title": "page schema",
+    "description": "my page",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "page name",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "你想生成什么page？"
+        },
+        "project": {
+            "type": "string",
+            "description": "Angular Project"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}
