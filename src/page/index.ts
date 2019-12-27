@@ -46,7 +46,6 @@ function readIntoSourceFile(host: Tree, modulePath: string): ts.SourceFile {
     return ts.createSourceFile(modulePath, sourceText, ts.ScriptTarget.Latest, true);
 }
 
-// @ts-ignore
 function addDeclarationToNgModule(options: PageOptions) {
     return (host: Tree) => {
         if (options.skipImport || !options.module) {
@@ -152,7 +151,7 @@ export function page(_options: PageOptions): Rule {
         ]);
 
         return chain([
-            // addDeclarationToNgModule(_options),
+            addDeclarationToNgModule(_options),
             mergeWith(templateSource),
             _options.lintFix ? applyLintFix(_options.path) : noop(),
         ]);

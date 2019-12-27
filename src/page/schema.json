@@ -15,7 +15,65 @@
         },
         "project": {
             "type": "string",
-            "description": "Angular Project"
+            "description": "Angular Project",
+            "$default": {
+                "$source": "projectName"
+            }
+        },
+        "skipImport": {
+            "type": "boolean",
+            "description": "是否跳过写入NgModule"
+        },
+        "style": {
+            "description": "page的样式文件，和系统保持一致",
+            "default": "css",
+            "enum": [
+                "css",
+                "scss",
+                "less"
+            ]
+        },
+        "type": {
+            "description": "创建的组件的后缀，比如这里应当是.page",
+            "default": "page"
+        },
+        "flat": {
+            "type": "boolean",
+            "default": false,
+            "description": "如果是true的话，在当前项目的顶层创建新文件夹。"
+        },
+        "viewEncapsulation": {
+            "description": "The view encapsulation strategy to use in the new component.",
+            "enum": ["Emulated", "Native", "None", "ShadowDom"],
+            "type": "string",
+            "alias": "v",
+            "x-user-analytics": 11
+        },
+        "changeDetection": {
+            "description": "The change detection strategy to use in the new component.",
+            "enum": ["Default", "OnPush"],
+            "type": "string",
+            "default": "Default",
+            "alias": "c"
+        },
+        "skipSelector": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specifies if the component should have a selector or not."
+        },
+        "inlineStyle": {
+            "description": "When true, includes styles inline in the component.ts file. Only CSS styles can be included inline. By default, an external styles file is created and referenced in the component.ts file.",
+            "type": "boolean",
+            "default": false,
+            "alias": "s",
+            "x-user-analytics": 9
+        },
+        "inlineTemplate": {
+            "description": "When true, includes template inline in the component.ts file. By default, an external template file is created and referenced in the component.ts file.",
+            "type": "boolean",
+            "default": false,
+            "alias": "t",
+            "x-user-analytics": 10
         }
     },
     "required": [
