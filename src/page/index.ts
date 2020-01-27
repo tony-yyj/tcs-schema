@@ -121,7 +121,6 @@ export function page(_options: PageOptions): Rule {
 
         const workspace = await getWorkspace(host);
         const project = workspace.projects.get(_options.project as string);
-
         // 获得项目的path配置
         if (_options.path === undefined && project) {
             _options.path = buildDefaultPath(project);
@@ -134,7 +133,6 @@ export function page(_options: PageOptions): Rule {
         _options.name = parsedPath.name;
         _options.path = parsedPath.path;
         _options.selector = _options.selector || buildSelector(_options, project && project.prefix || '');
-
         validateName(_options.name);
         validateHtmlSelector(_options.selector);
 

@@ -1,1 +1,3 @@
-<p><%= dasherize(name) %></p>
+<div class="<%= dasherize(name) %>-page">
+    <p><%= dasherize(name) %> created !</p>
+</div>
